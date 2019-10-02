@@ -24,18 +24,20 @@ const Number = styled.Text`
   /* border: 1px solid white; */
 `
 
-export default class Group extends Component<Props> {
-  render() {
-    console.log(this.props)
-    return (
-      <Container>
-        {
-          this.props.numbers.map((number, i) => {
-            console.log(number);
-            return <Number key={i}>{number}</Number>
-          })
-        }
-      </Container>
-    )
-  }
+const Group = ({ numbers }: Props) => {
+
+  console.log(numbers)
+  return (
+    <Container>
+      {
+        numbers.map((number, i) => {
+          console.log(number);
+          return <Number key={i}>{number}</Number>
+        })
+      }
+    </Container>
+  )
 }
+
+
+export default Group;

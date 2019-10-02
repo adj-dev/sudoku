@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components/native'
 import Group from './Group'
 
+
 const Container = styled.View`
   width: 300px;
   height: 300px;
-  /* border: 1px solid #4e70a6; */
   border-radius: 8;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,18 +33,37 @@ const numbers = () => {
   return arr;
 }
 
-export default class Gameboard extends React.Component {
-  render() {
-    return (
-      <Container>
-        {
-          numbers().map((arr, i) => {
-            console.log('from the map method on numbers:', arr);
 
-            return <Group key={i} numbers={[...arr]} />
-          })
-        }
-      </Container>
-    )
-  }
+const Gameboard = () => {
+  return (
+    <Container>
+      {
+        numbers().map((arr, i) => {
+          console.log('from the map method on numbers:', arr);
+
+          return <Group key={i} numbers={[...arr]} />
+        })
+      }
+    </Container>
+  )
 }
+
+
+export default Gameboard;
+
+
+// export default class Gameboard extends React.Component {
+//   render() {
+//     return (
+//       <Container>
+//         {
+//           numbers().map((arr, i) => {
+//             console.log('from the map method on numbers:', arr);
+
+//             return <Group key={i} numbers={[...arr]} />
+//           })
+//         }
+//       </Container>
+//     )
+//   }
+// }
