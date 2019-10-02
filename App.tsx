@@ -1,23 +1,18 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import Gameboard from './src/components/Gameboard'
 
 const Container = styled.View`
   flex: 1;
-  background-color: papayawhip;
-  align-items: center;
   justify-content: center;
-`
-
-// styles for text
-const Title = styled.Text`
-  font-size: 34px;
-  color: #323232;
+  align-items: center;
+  background: papayawhip;
 `
 
 export default function App() {
   return (
     <Container>
-      <Title>Hello!</Title>
+      <Gameboard />
     </Container>
   );
 }
