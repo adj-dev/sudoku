@@ -12,6 +12,7 @@ const Container = styled.View`
   justify-content: space-evenly;
 `
 
+
 const numbers = () => {
   let arr: any[] = [];
 
@@ -29,7 +30,6 @@ const numbers = () => {
 
     arr.push(miniArr);
   }
-  console.log('from the numbers method:', arr);
   return arr;
 }
 
@@ -39,8 +39,6 @@ const Gameboard = () => {
     <Container>
       {
         numbers().map((arr, i) => {
-          console.log('from the map method on numbers:', arr);
-
           return <Group key={i} numbers={[...arr]} />
         })
       }
@@ -50,20 +48,3 @@ const Gameboard = () => {
 
 
 export default Gameboard;
-
-
-// export default class Gameboard extends React.Component {
-//   render() {
-//     return (
-//       <Container>
-//         {
-//           numbers().map((arr, i) => {
-//             console.log('from the map method on numbers:', arr);
-
-//             return <Group key={i} numbers={[...arr]} />
-//           })
-//         }
-//       </Container>
-//     )
-//   }
-// }
