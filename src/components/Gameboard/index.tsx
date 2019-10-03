@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/native'
 import Group from './Group'
+import { generateBoard, testGen, tester } from '../../helpers/logic'
 
 
 const Container = styled.View`
@@ -13,32 +14,18 @@ const Container = styled.View`
 `
 
 
-const numbers = () => {
-  let arr: any[] = [];
-
-  for (let i = 0; i < 9; i++) {
-    let miniArr: any[] = [];
-
-    for (let j = 0; miniArr.length < 9; j++) {
-      let randomNumber: any = Math.floor(Math.random() * 9) + 1;
-      if (miniArr.indexOf(randomNumber) === -1) {
-        miniArr.push(randomNumber)
-      } else {
-        continue
-      }
-    }
-
-    arr.push(miniArr);
-  }
-  return arr;
-}
-
-
 const Gameboard = () => {
+
+  const board: any[] = generateBoard();
+
+  // testGen();
+  tester();
+
+
   return (
     <Container>
       {
-        numbers().map((arr, i) => {
+        board.map((arr, i) => {
           return <Group key={i} numbers={[...arr]} />
         })
       }
